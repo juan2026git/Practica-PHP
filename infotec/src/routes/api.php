@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\EventController;
 use App\Http\Controllers\Api\ponentesController;
+use App\Http\Controllers\Api\AsistentesController;
 
 // Recuperar todos los eventos
 Route::get('/events', [EventController::class, 'index']);
@@ -36,3 +37,20 @@ Route::put('/ponentes/{id}', [ponentesController::class, 'update']);
 
 // Eliminar un evento
 Route::delete('/ponentes/{id}', [ponentesController::class, 'destroy']);
+
+// ASISTENTES CONTROLLER
+
+// Recuperar todos los eventos de asistentes
+Route::get('/asistentes', [AsistentesController::class, 'index']);
+
+// Crear un evento
+Route::post('/asistentes', [AsistentesController::class, 'store']);
+
+// Recuperar un evento específico
+Route::get('/asistentes/{id}', [AsistentesController::class, 'show']);
+
+// Actualizar un evento
+Route::put('/asistentes/{id}', [AsistentesController::class, 'update']);
+
+// Eliminar un evento
+Route::delete('/asistentes/{id}', [AsistentesController::class, 'destroy']);
